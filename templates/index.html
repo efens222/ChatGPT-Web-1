@@ -19,6 +19,7 @@
             border: #aaaaaa;
             align-items: center;
             justify-content: center;
+			font-size: 14px;
         }
         .all-container {
             max-height: 760px;
@@ -30,6 +31,7 @@
             flex-flow: row;
             justify-content: center;
             align-items: center;
+			
         }
         .left-container{
             height: 90%;
@@ -70,7 +72,7 @@
         }
         .right-container{
             height: 90%;
-            width: 760px;
+            width: 860px;
             min-width: 220px;
             border-radius: 4px;
             border: 0.5px solid #cccccc;
@@ -84,6 +86,7 @@
             padding: 20px;
             overflow-y: scroll;
             flex: 1;
+			
         }
         /* 设置滚动条的样式 */
         .content::-webkit-scrollbar {
@@ -180,7 +183,7 @@
         textarea{
             flex: 1;
             padding: 5px;
-            font-size: 14px;
+            font-size: 10px;
             border: none;
             cursor: pointer;
             overflow-y: auto;
@@ -276,23 +279,40 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
     <!-- and it's easy to individually load additional languages -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/languages/go.min.js"></script>
+ <style>
+        #image1{
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
 
+        #image2{
+			src: url("/")
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    </style>
 </head>
 <body>
-    <div class="all-container">
-        <div class="left-container">
+	
+
+    
+<div class="all-container">
+    <div class="left-container">
             <div class="chat-list">
                 <div class="newchat" id="newchat">添加新的对话</div>
 
             </div>
         </div>
         <div class="right-container">
-            <div class="content">
-            </div>
+            <div class="content"> </div>
             <div class="input-area">
                 <textarea name="text" id="textarea"></textarea>
                 <div class="button-area">
-                    <button id="stop-btn" class="talk_sub" style="display: none">停止生成</button>
+                    <button id="stop-btn" class="talk_sub" style="display: yes">停止生成</button>
                     <button id="del-btn" class="talk_sub">删除聊天记录</button>
                     <button id="chmod-btn" class="talk_sub">当前为普通对话</button>
                     <button id="send-btn" class="talk_sub">发 送</button>
@@ -302,16 +322,19 @@
         </div>
 
     </div>
-{#    当移动到消息框时显示的复制按钮 #}
-{#                默认不显示，由js控制显示#}
-    <div class="menu" id="menu">
-        <button class="menu-btn" id="copy-btn">复制</button>
-        <button class="menu-btn" id="resend-btn">重新发送</button>
+    <p> {#    当移动到消息框时显示的复制按钮 #}
+      {#                默认不显示，由js控制显示#} </p>
+    
+<div class="menu" id="menu">
+    <button class="menu-btn" id="copy-btn">复制</button>
+    <button class="menu-btn" id="resend-btn">重新发送</button>
     </div>
+<img src="image/yyy99966_.jpg" alt="图片2" width="150" height="151" id="image2">
 
 
 </body>
 <script>
+	
     hljs.initHighlightingOnLoad();
     // 设置marked
     marked.marked.setOptions({
@@ -714,4 +737,6 @@
         }
     });
 </script>
+
+
 </html>
